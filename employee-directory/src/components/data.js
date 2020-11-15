@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import API from "../utils/api"
 import NavBar from "./NavBar.js";
 import Table from "./Table.js";
+// import TableRow from "./TableRow";
 
 export default class Data extends Component{
     state = {
@@ -34,17 +35,18 @@ export default class Data extends Component{
         }
 
         const sortedUsers = this.state.filteredUsers.sort(compareFunc);
-        this.setState({filteredUsers:sortedUsers})
+        this.setState({filteredUsers: sortedUsers})
 
     };
 
     componentDidMount() {
         API.getRandos().then(results => {
-            console.log(results.data.results);
+            // console.log(results.data.results);
             this.setState({
                 users:results.data.results,
-                filteredUsers:results.data.results
+                filteredUsers: results.data.results
             });
+            // console.log(results.data.results);
         });
     };
 
@@ -54,20 +56,20 @@ export default class Data extends Component{
             let values = Object.values(item).join("").toLowerCase();
             return values.indexOf(filter.toLowerCase()) !== -1;
         })
-        this.setState({filteredUsers:filterRandos});
+        this.setState({filteredUsers: filterRandos});
     };
     
     render() {
         return (
-            <>
+            <div>
                 <NavBar searchRandos = {this.searchRandos}/>
                 <div>
                 <Table
                     users={this.state.filteredUsers}
                     sortColumn={this.sortColumn}
                 />
+                </div>
             </div>
-            </>
         );
     };
 
