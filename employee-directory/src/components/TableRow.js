@@ -1,7 +1,7 @@
 import React from "react";
 
 
-function TableRow( {users} ) {
+function TableRow( users ) {
      console.log(users);
     function formatDate(date) {
         const dateArray = date.split("-");
