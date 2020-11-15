@@ -1,19 +1,19 @@
 import react from "react";
-import navBar from "./components/navBar";
-import search from "./components/search";
-import table from "./components/table";
-import { dataEmployees } from "./components/data";
+import NavBar from "./components/NavBar.js";
+import Search from "./components/Search.js";
+import Table from "./components/Table.js";
+import { dataRandos } from "./components/Data.js";
 import logo from './logo.svg';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <navBar />
-      <search />
-      <table>
-        <data />
-      </table>
+      <NavBar />
+      <Search />
+      <Table>
+        <Data />
+      </Table>
     </div>
   );
 }

@@ -1,8 +1,10 @@
 import react from "react";
 import axios from "axios";
 
-export default axios.create({
-    basURL: `https://randomuser.me/api/`,
-    responseType: "json"
-});
+export default {
+    getRandos: function() {
+        axios.get("https://randomuser.me/api/?results=15"
+        ).then(response => )
+    }
+};
 
