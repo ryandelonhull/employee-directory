@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import API from "../utils/api"
+import NavBar from "./NavBar.js";
 
 export default class Data extends Component{
     state = {
@@ -54,6 +55,11 @@ export default class Data extends Component{
         this.setState({filteredUsers:filterRandos});
     };
     
+    render() {
+        return (
+            <NavBar searchRandos = {this.searchRandos}/>
+        );
+    };
 };   
 
 
